@@ -1,0 +1,48 @@
+body { 
+    font-family: sans-serif;
+     max-width: 500px; 
+     margin: 40px auto; 
+     padding: 0 16px; 
+}
+h1 { 
+    font-size: 20px; 
+    margin-bottom: 16px;
+
+}
+h3 { 
+    margin: 12px 0 6px; 
+}
+button, input[type="text"] { 
+    padding: 6px 12px; 
+    margin: 4px 2px; 
+    font-size: 14px; 
+    border-radius: 4px; 
+     border: none;
+     color: #000;
+}
+button {    
+    cursor: pointer; 
+    background-color: rgb(190, 202, 203);
+    border-radius: 4px; 
+     border: none;
+     color: #000;
+}
+button:disabled { 
+    opacity: 0.4; 
+    cursor: not-allowed; 
+}
+progress { 
+    width: 100%; 
+    margin: 6px 0; 
+}
+a#download-link { 
+    display: inline-block; 
+    margin-top: 6px; 
+    padding: 6px 14px; 
+    background: #1a73e8; 
+    color: #fff; 
+    text-decoration: none; 
+    border-radius: 4px; 
+}
+.error { color: rgb(230, 53, 53); }
+.hidden { display: none; }

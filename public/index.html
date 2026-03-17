@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Share</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div id="lobby">
+    <h1>Video Share</h1>
+
+    <button id="btn-create">Create Room</button>
+
+    <div id="created-room" class="hidden">
+      <p>Room ID: <strong id="display-room-id"></strong>
+        <button id="btn-copy">Copy</button>
+      </p>
+      <p id="waiting">Waiting for peer to join…</p>
+    </div>
+
+    <hr/>
+
+    <input id="input-room-id" type="text" placeholder="Enter Room ID" maxlength="12" />
+    <button id="btn-join">Join Room</button>
+
+    <p id="lobby-error" class="error hidden"></p>
+  </div>
+
+  <div id="room" class="hidden">
+    <p>Room: <strong id="room-id-label"></strong> — <span id="peer-status">Connecting…</span></p>
+    <hr/>
+
+    <h3>Send Video</h3>
+    <input type="file" id="file-input" accept="video/mp4" />
+    <p id="file-info" class="hidden"><span id="file-name-display"></span> (<span id="file-size-display"></span>)</p>
+    <button id="btn-send" disabled>Send</button>
+    <div id="send-progress" class="hidden">
+      <progress id="send-bar" value="0" max="100"></progress>
+      <span id="send-pct">0%</span>
+    </div>
+
+    <hr/>
+
+    <h3>Receive Video</h3>
+    <p id="receive-idle">Waiting for peer to send a video…</p>
+    <div id="receive-progress" class="hidden">
+      <progress id="receive-bar" value="0" max="100"></progress>
+      <span id="receive-pct">0%</span>
+      <span id="receive-fname"></span>
+    </div>
+    <div id="download-area" class="hidden">
+      <p> Received: <span id="received-fname"></span></p>
+      <a id="download-link" download>Download Video</a>
+    </div>
+
+    <p id="room-error" class="error hidden"></p>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
